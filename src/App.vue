@@ -2,11 +2,27 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">List des boutiques</router-link> |
-      <router-link to="/cart">Panier</router-link> |
+      <router-link to="/cart">Panier ({{ cart.count }})</router-link> |
     </div>
-    <router-view/>
+    <router-view/>r
   </div>
 </template>
+
+<script>
+import { mapGetters, mapState } from 'vuex';
+
+export default {
+  computed: {
+    ...mapState({
+      cart: state => state.cart.cart
+    }),
+    ...mapGetters({
+      cartCountItems: 'cart/countItems'
+    })
+  }
+}
+</script>
+
 
 <style>
 #app {
