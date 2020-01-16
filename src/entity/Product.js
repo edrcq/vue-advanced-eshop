@@ -1,3 +1,5 @@
+import { httpClient } from '@/app/index'
+
 class Product {
 	constructor({ name, product, dep, color, material, price, shop } = {}) {
 		this.name = name || ''
@@ -7,6 +9,10 @@ class Product {
 		this.material = material || ''
 		this.price = price || 0
 		this.shop = shop || ''
+	}
+
+	static fetch(shop) {
+		return httpClient.get(`/products?shop=${shop}`)
 	}
 }
 
