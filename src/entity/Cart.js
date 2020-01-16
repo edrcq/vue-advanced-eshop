@@ -19,7 +19,6 @@ class Cart {
 	}
 
 	add(product) {
-		console.log(product)
 		const already = this.items[product.id]
 		if (!already) {
 			this.items[product.id] = { ...product, quantity: 1 }

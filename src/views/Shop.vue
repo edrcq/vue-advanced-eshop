@@ -41,7 +41,6 @@ export default {
 	methods: {
 		addToCart(product) {
 			//this.$store.commit('cart/add', product)
-			console.log(product)
 			this.$store.dispatch('cart/add', product)
 		}
 	}
