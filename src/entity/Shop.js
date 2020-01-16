@@ -11,6 +11,10 @@ class Shop {
 	static fetch(page = 0, limit = 20) {
 		return httpClient.get(`/shops?_page=${page}&_limit=${limit}`)
 	}
+
+	static findByDomain(domain) {
+		return httpClient.get(`/shops?domain=${domain}`)
+	}
 }
 
 export default Shop

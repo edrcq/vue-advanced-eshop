@@ -22,13 +22,20 @@ export default {
 	},
 	computed: {
 		...mapState({
-			products: state => state.products.list
+			products: state => state.product.list,
 		}),
 	},
 	created() {
 		const { shop: shopDomain } = this.$route.params
-		const shopx = this.$store.getters['shop/byDomain'](shopDomain)
-		this.$store.dispatch('products/fetch', shopx.uuid)
-	}
+		const shop = this.$store.getters['shop/byDomain'](shopDomain)
+		if (!shop) {
+			this.$store.dispatch('shop/findByDomain', shopDomain).then(shop => {
+				this.$store.dispatch('product/fetch', shop.uuid)
+			})
+		} else {
+			this.$store.dispatch('product/fetch', shop.uuid)
+		}
+
+	},
 }
 </script>

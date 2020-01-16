@@ -7,5 +7,8 @@ export default {
 	},
 	list(state, list) {
 		state.list = list
+	},
+	push(state, item) {
+		state.list.push(item)
 	}
 }
