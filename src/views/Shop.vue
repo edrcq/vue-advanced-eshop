@@ -7,7 +7,7 @@
 				class="col-3 my-3 py-3 border"
 			>
 				{{ product.name }}<br />
-				<button class="btn btn-primary" @click="addToCart(product)">Add to cart</button>
+				<button class="btn btn-primary" @click="addToCart(product)">{{ $t('btn_add_to_cart') }}</button>
 			</div>
 		</div>
 	</div>

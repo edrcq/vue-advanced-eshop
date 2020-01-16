@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
-import messages from '@/lang/messages/en'
+import en from './messages/en'
 import axios from 'axios'
 
 Vue.use(VueI18n)
@@ -8,10 +8,10 @@ Vue.use(VueI18n)
 export const i18n = new VueI18n({
   locale: 'en', // set locale
   fallbackLocale: 'en',
-  messages // set locale messages
+  messages: { en } // set locale messages
 })
 
-const loadedLanguages = ['en'] // our default language that is preloaded
+export const loadedLanguages = ['en'] // our default language that is preloaded
 
 function setI18nLanguage (lang) {
   i18n.locale = lang

@@ -3,6 +3,8 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+import { loadLanguageAsync } from '@/lang'
+
 import shop from './shop'
 import product from './product'
 import cart from './cart'
@@ -14,9 +16,13 @@ export default new Vuex.Store({
     cart,
   },
   state: {
+
   },
   mutations: {
   },
   actions: {
+    setLang(ctx, lang) {
+      loadLanguageAsync(lang)
+    }
   }
 })
