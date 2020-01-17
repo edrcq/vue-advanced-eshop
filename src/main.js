@@ -4,6 +4,9 @@ import router from './router'
 import store from './store'
 
 import { i18n } from './lang'
+import { socket } from './plugins'
+
+Vue.use(socket)
 
 Vue.config.productionTip = false
 

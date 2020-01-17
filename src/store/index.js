@@ -8,12 +8,15 @@ import { loadLanguageAsync } from '@/lang'
 import shop from './shop'
 import product from './product'
 import cart from './cart'
+import chat from './chat'
+
 
 export default new Vuex.Store({
   modules: {
     shop,
     product,
     cart,
+    chat,
   },
   state: {
 
